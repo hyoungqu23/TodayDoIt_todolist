@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
+import CategoryBox from './CategoryBox';
 
 const TodoForm = ({ onInsert, disabled }) => {
   const [inputValue, setInputValue] = useState('');
+  const [category, setCategory] = useState(undefined);
 
   const handleSubmitBtn = (event) => {
     event.preventDefault();
@@ -13,8 +15,13 @@ const TodoForm = ({ onInsert, disabled }) => {
     setInputValue(event.target.value);
   };
 
+  const handleSelectCategory = (event) => {
+    setCategory(event.target.value);
+  };
+
   return (
     <form onSubmit={handleSubmitBtn}>
+      <CategoryBox onSelect={handleSelectCategory} />
       <input
         type="text"
         value={inputValue}
