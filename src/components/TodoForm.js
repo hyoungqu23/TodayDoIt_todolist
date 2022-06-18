@@ -7,7 +7,7 @@ const TodoForm = ({ onInsert, disabled }) => {
 
   const handleSubmitBtn = (event) => {
     event.preventDefault();
-    onInsert(inputValue);
+    onInsert(inputValue, category);
     setInputValue('');
   };
 

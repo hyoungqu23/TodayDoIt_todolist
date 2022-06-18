@@ -1,8 +1,8 @@
 import React from 'react';
 
-const CategoryBox = () => {
+const CategoryBox = ({ onSelect }) => {
   return (
-    <select name="category" id="category">
+    <select name="category" id="category" onChange={onSelect}>
       <option value="coding">Coding</option>
       <option value="blog">Blog</option>
       <option value="job-seeking">Job Seeking</option>
